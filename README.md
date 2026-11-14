@@ -6,18 +6,18 @@ A Flask web application that manages restaurant reservations with a **relational
 
 ---
 
-## ✨ Features
+## Features
 
 - **Reservation list:** view all reservations stored in SQLite
 - **Add reservation:** form that writes each reservation to **both SQLite and Firestore**
 - **Support page:** guests enter their name, choose a subject (*Defected Product, Late Order, Lost Product, Suggestion*) and send a message, timestamped automatically
 - **Admin panel:** lists all support messages in one place and lets the admin reply to each one
 
-## 🛠️ Tech stack
+## Tech stack
 
 Python · Flask · SQLite · Firebase Firestore (firebase-admin SDK) · HTML / Jinja2 templates
 
-## 📁 Project structure
+##  Project structure
 
 ```
 ├── app.py                  # Flask routes (reservations, support, admin)
@@ -30,7 +30,7 @@ Python · Flask · SQLite · Firebase Firestore (firebase-admin SDK) · HTML / J
 └── requirements.txt
 ```
 
-## 🚀 Running locally
+## Running locally
 
 1. Install dependencies:
    ```bash
@@ -52,6 +52,6 @@ Python · Flask · SQLite · Firebase Firestore (firebase-admin SDK) · HTML / J
    python app.py
    ```
 
-## 🔒 Note on credentials
+## Note on credentials
 
 The Firebase service account key is **not** included in this repository. Each user must supply their own.
