@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reply to Support Message</title>
+</head>
+<body>
+    <h1>Reply to Support Message</h1>
+    <p><strong>Name:</strong> {{ message['name'] }}</p>
+    <p><strong>Subject:</strong> {{ message['subject'] }}</p>
+    <p><strong>Message:</strong> {{ message['message'] }}</p>
+    <p><strong>Timestamp:</strong> {{ message['timestamp'] }}</p>
+
+    <form method="post">
+        <label for="reply">Your Reply:</label><br>
+        <textarea id="reply" name="reply" rows="4" cols="50" required></textarea><br><br>
+        <button type="submit">Send Reply</button>
+    </form>
+
+    <a href="/admin">Back to Admin Page</a>
+</body>
+</html>
+

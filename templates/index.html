@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation List</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        a {
+            text-decoration: none;
+            color: blue;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reservation List</h1>
+
+    <!-- Reservation Table -->
+    {% if reservations %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Reservation ID</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Customer ID</th>
+                    <th>Table ID</th>
+                    <th>Employee ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reservation in reservations %}
+                <tr>
+                    <td>{{ reservation['ReservationID'] }}</td>
+                    <td>{{ reservation['Date'] }}</td>
+                    <td>{{ reservation['Time'] }}</td>
+                    <td>{{ reservation['CustomerID'] }}</td>
+                    <td>{{ reservation['TableID'] }}</td>
+                    <td>{{ reservation['EmployeeID'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No reservations found.</p>
+    {% endif %}
+
+    <br>
+    <!-- Navigation Links -->
+    <a href="/add">Add New Reservation</a>
+    <br>
+    <a href="/support">Support Page</a>
+    <br>
+    <a href="/admin">Admin Panel</a>
+</body>
+</html>
+

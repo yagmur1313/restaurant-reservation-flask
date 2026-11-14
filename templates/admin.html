@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Admin Panel</h1>
+    <h2>Support Messages</h2>
+
+    {% if messages %}
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>Message</th>
+                <th>Timestamp</th>
+                <th>Reply</th>
+                <th>Actions</th>
+            </tr>
+            {% for msg in messages %}
+            <tr>
+                <td>{{ msg['name'] }}</td>
+                <td>{{ msg['subject'] }}</td>
+                <td>{{ msg['message'] }}</td>
+                <td>{{ msg['timestamp'] }}</td>
+                <td>{{ msg['reply'] }}</td>
+                <td>
+                    <a href="/reply_support/{{ msg['id'] }}">Reply</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No support messages found.</p>
+    {% endif %}
+</body>
+</html>
+
