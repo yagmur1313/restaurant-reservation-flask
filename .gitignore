@@ -1,0 +1,19 @@
+# Secrets: never commit Firebase keys
+serviceAccountKey.json
+*serviceAccount*.json
+.env
+
+# Local database
+*.sqlite
+*.db
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Editor / OS files
+*.swp
+.DS_Store
+.idea/
